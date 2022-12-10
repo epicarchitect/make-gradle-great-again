@@ -19,7 +19,7 @@ android {
     }
 
     println("on Android")
-    println(sourceSets.asMap.toString())
+    println(sourceSets.getByName("main").res.srcDirs.toString())
 //    sourceSets.getByName("main").res.srcDir(File(projectDir, "src/epicdir/res"))
 }
 
