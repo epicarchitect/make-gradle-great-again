@@ -12,16 +12,29 @@ class EpicPlugin : Plugin<Project> {
         val ext = target.extensions.create<EpicExtension>("myExt")
 
         target.afterEvaluate {
-            target.setEpicSourceSet()
-            println(ext.epicWord.get())
+            target.configure<BaseExtension> {
+                setEpicSourceSet(target.projectDir, ext.epicResourcesPath.get())
+            }
         }
+
+//        target.tasks.register("generation") {
+//            description = "generation!!!"
+//            doFirst {
+//                target.configure<BaseExtension> {
+//                    setEpicSourceSet(target.projectDir, ext.epicResourcesPath.get())
+//                    println("generated")
+//                }
+//            }
+//        }
+//
+//        target.afterEvaluate {
+//            tasks.
+//        }
     }
 
-    private fun Project.setEpicSourceSet() {
-        configure<BaseExtension> {
-            sourceSets.getByName("main") {
-                res.srcDir(File(projectDir, "src/epicdir/res"))
-            }
+    private fun BaseExtension.setEpicSourceSet(dir: File, path: String) {
+        sourceSets.getByName("main") {
+            res.srcDir(File(dir, path))
         }
     }
 }

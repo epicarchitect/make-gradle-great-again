@@ -19,6 +19,7 @@ android {
     }
 
     println("on Android")
+    println(sourceSets.asMap.toString())
 //    sourceSets.getByName("main").res.srcDir(File(projectDir, "src/epicdir/res"))
 }
 
@@ -29,7 +30,7 @@ dependencies {
 }
 
 myExt {
-    epicWord.set("hello world")
+    epicResourcesPath.set("src/epicdir/res")
 }
 
 println("end script")
