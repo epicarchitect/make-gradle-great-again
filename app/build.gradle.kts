@@ -1,3 +1,5 @@
+println("start script")
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -15,6 +17,9 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
+    println("on Android")
+//    sourceSets.getByName("main").res.srcDir(File(projectDir, "src/epicdir/res"))
 }
 
 dependencies {
@@ -26,3 +31,5 @@ dependencies {
 myExt {
     epicWord.set("hello world")
 }
+
+println("end script")
