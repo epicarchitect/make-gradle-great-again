@@ -13,7 +13,7 @@ class EpicPlugin : Plugin<Project> {
 
         target.afterEvaluate {
             target.configure<BaseExtension> {
-                setEpicSourceSet(target.projectDir, ext.epicResourcesPath.get())
+                setEpicSourceSet(target.projectDir, ext.epicResourcesPath!!)
             }
         }
 

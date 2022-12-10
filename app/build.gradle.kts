@@ -30,7 +30,7 @@ dependencies {
 }
 
 myExt {
-    epicResourcesPath.set("src/epicdir/res")
+    epicResourcesPath = "src/epicdir/res"
 }
 
 println("end script")
