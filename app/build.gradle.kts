@@ -1,9 +1,7 @@
-println("start script")
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("epic-plugin") version "1.0"
+    id("epic-plugin")
 }
 
 android {
@@ -18,9 +16,15 @@ android {
         versionName = "1.0"
     }
 
-    println("on Android")
-    println(sourceSets.getByName("main").res.srcDirs.toString())
-//    sourceSets.getByName("main").res.srcDir(File(projectDir, "src/epicdir/res"))
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    sourceSets.getByName("main") {
+//        kotlin.srcDir(File(projectDir, "src/epicdir/kotlin"))
+//        res.srcDir(File(projectDir, "src/epicdir/res"))
+    }
 }
 
 dependencies {
@@ -30,7 +34,7 @@ dependencies {
 }
 
 myExt {
-    epicResourcesPath = "src/epicdir/res"
+    epicDir.set(projectDir)
+    epicResourcesPath.set("src/epicdir/res")
+    epicCodePath.set("src/epicdir/kotlin")
 }
-
-println("end script")
