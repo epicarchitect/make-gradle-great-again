@@ -12,7 +12,7 @@ java {
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:7.3.1")
+    implementation("com.android.tools.build:gradle:7.2.0")
 }
 
 gradlePlugin {
