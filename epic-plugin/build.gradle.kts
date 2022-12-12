@@ -7,12 +7,12 @@ group = "epicarchitect.epic.plugin"
 version = "1.0"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:7.4.0-rc01")
+    implementation("com.android.tools.build:gradle:7.3.1")
 }
 
 gradlePlugin {
