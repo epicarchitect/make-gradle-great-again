@@ -20,11 +20,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
-    sourceSets.getByName("main") {
-//        kotlin.srcDir(File(projectDir, "src/epicdir/kotlin"))
-//        res.srcDir(File(projectDir, "src/epicdir/res"))
-    }
 }
 
 dependencies {
